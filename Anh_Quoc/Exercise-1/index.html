@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Solution 1 : use document and addEventListener with type submit -->
+    <!-- <form id="myForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="'name">
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+            <option value="vietnam">Viet Nam</option>
+            <option value="usa">USA</option>
+        </select>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+
+            // Get form values
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var dob = document.getElementById('dob').value;
+            var country = document.getElementById('country').value;
+            var description = document.getElementById('description').value;
+
+            // Display alert with form values
+            var message = "Name: " + name + "\nAge: " + age + "\nDate of Birth: " + dob + "\nCountry: " + country + "\nDescription: " + description;
+            alert(message);
+        });
+    </script> -->
+
+    <!-- Solution 2 : use onChange with event to get value and onClick to submit form -->
+    <!-- <form id="myForm" method="get">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" onChange="handleChange(event)"><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" onChange="handleChange(event)"><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" onChange="handleChange(event)"><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" onChange="handleSelect(event)">
+            <option value="vietnam">Viet Nam</option>
+            <option value="usa">USA</option>
+        </select><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" onChange="handleChange(event)" rows="4"  name="description"></textarea><br>
+
+        <button type="submit" onClick="submitForm(event)">Submit</button>
+
+        <script>
+            var formData = {
+                name: "",
+                age: "",
+                dob: "",
+                country: "vietnam",
+                description: ""
+            };
+
+            function handleChange(e) {
+                const fieldName = event.target.name;
+                const fieldValue = event.target.value;
+
+                formData[fieldName] = fieldValue;
+            }
+
+            function handleSelect(e) {
+                formData.country = e.target.value
+            }
+
+            function submitForm(e) {
+                e.preventDefault()
+                alert("Name: " + formData.name + "\nAge: " + formData.age + "\nDate of Birth: " + formData.dob + "\nCountry: " + formData.country + "\nDescription: " + formData.description);
+            }
+        </script>
+    </form> -->
+</body>
+
+</html>
